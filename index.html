@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Travail de session - BD2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container header-inner">
+                <div class="logo">Travail de session - BD2</div>
+                <nav class="navbar" aria-label="Navigation principale">
+                    <a href="#produits">Produits</a>
+                    <a href="#reservation">Réservation</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container main-content">
+            <section id="reservation" class="card" aria-labelledby="reservation-title">
+                <h2 id="reservation-title">Réserver un service / une location</h2>
+                <fieldset>
+                    <legend class="visually-hidden">Actions de réservation</legend>
+                    <div class="button-row">
+                        <button type="button">Réserver maintenant</button>
+                        <button type="button">Voir les disponibilités</button>
+                        <button type="button">Modifier une réservation</button>
+                        <button type="button">Annuler une réservation</button>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section id="produits" class="card" aria-labelledby="produits-title">
+                        <div class="section-header">
+                            <h2 id="produits-title">Nos produits</h2>
+                            <div class="section-header-controls">
+                                <label for="tri-produits" class="visually-hidden">Trier les produits par</label>
+                                <select id="tri-produits" name="tri-produits" class="select-sort">
+                                    <option value="">Trié par</option>
+                                    <option value="prix-asc">Prix croissant</option>
+                                    <option value="prix-desc">Prix décroissant</option>
+                                    <option value="nom">Nom</option>
+                                    <option value="disponibilite">Disponibilité</option>
+                                </select>
+                            </div>
+                        </div>
+                <fieldset>
+                    <legend class="visually-hidden">Liste de produits</legend>
+                            <ul>
+                                <li>Produit 1</li>
+                                <li>Produit 2</li>
+                                <li>Produit 3</li>
+                            </ul>
+                </fieldset>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>Travail de session - BD2</p>
+            </div>
+        </footer>
+    </body>
+</html>
