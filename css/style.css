@@ -173,3 +173,74 @@ button:active {
   background-color: #f9fafb;
   margin-top: auto;
 }
+
+/* Full-width layout pour client et produit */
+.main-content.full-width {
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  width: 100%;
+  padding: 32px 16px;
+}
+
+/* Styles pour les tableaux */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+thead {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+}
+
+tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-buttons button {
+  min-width: auto;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* Styles pour les formulaires */
+.form-section {
+  margin-bottom: 24px;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}

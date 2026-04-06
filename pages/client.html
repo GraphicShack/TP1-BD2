@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Travail de session - BD2 | Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">Travail de session - BD2</div>
+            <nav class="navbar" aria-label="Navigation principale">
+                <a href="/">Accueil</a>
+                <a href="/client">Clients</a>
+                <a href="/produit">Produits</a>
+                <a href="/reservation">Réservation</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content full-width">
+        <section class="card form-section">
+            <h2 id="formTitle">Ajouter un client</h2>
+            <form id="addClientForm">
+                <input type="hidden" name="id" id="clientId" />
+                <div class="form-fields">
+                    <input type="text" name="nom" id="clientNom" placeholder="Nom" required />
+                    <input type="email" name="email" id="clientEmail" placeholder="Email" required />
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" id="submitButton">Ajouter</button>
+                    <button type="button" id="cancelEdit" style="display:none;">Annuler</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Liste des clients</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="clientTable">
+                    <tr><td colspan="4">Chargement...</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Travail de session - BD2</p>
+        </div>
+    </footer>
+    <script src="/js/clients.js"></script>
+</body>
+</html>
