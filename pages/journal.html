@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Travail de session - BD2 | Journal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">Travail de session - BD2</div>
+            <nav class="navbar" aria-label="Navigation principale">
+                <a href="/">Accueil</a>
+                <a href="/client">Clients</a>
+                <a href="/produit">Produits</a>
+                <a href="/reservation">Réservation</a>
+                <a href="/journal">Journal</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content full-width">
+        <section class="card">
+            <h2>Journal des modifications</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Table</th>
+                        <th>Action</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="journalTable">
+                    <tr><td colspan="4">Chargement...</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="/js/journal.js"></script>
+</body>
+</html>

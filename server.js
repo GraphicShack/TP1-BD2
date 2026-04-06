@@ -39,6 +39,10 @@ app.get("/produit", (req, res) => {
   res.sendFile(path.join(__dirname, "pages", "produit.html"));
 });
 
+app.get("/journal", (req, res) => {
+  res.sendFile(path.join(__dirname, "pages", "journal.html"));
+});
+
 app.get("/api/test-connection", async (req, res) => {
   let connection;
   try {
@@ -211,6 +215,23 @@ app.delete("/api/produits/:id", async (req, res) => {
   }
 });
 
+// Routes pour le JOURNAL
+app.get("/api/journal", async (req, res) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection(dbConfig);
+    const result = await connection.execute(
+      "SELECT ID, TABLE_NAME, ACTION, DATE_ACTION FROM JOURNAL ORDER BY DATE_ACTION DESC"
+    );
+    const journal = result.rows.map(r => ({ ID: r[0], TABLE_NAME: r[1], ACTION: r[2], DATE_ACTION: r[3] }));
+    res.json(journal);
+  } catch (err) {
+    console.error("Erreur récupération journal:", err);
+    res.status(500).json({ ok: false, message: err.message });
+  } finally {
+    if (connection) await connection.close();
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
