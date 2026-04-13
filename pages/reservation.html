@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Travail de session - BD2 | Réservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">Travail de session - BD2</div>
+            <nav class="navbar" aria-label="Navigation principale">
+                <a href="/">Accueil</a>
+                <a href="/client">Clients</a>
+                <a href="/produit">Produits</a>
+                <a href="/reservation">Réservation</a>
+                <a href="/journal">Journal</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content full-width">
+        <section class="card form-section">
+            <h2 id="reservationFormTitle">Nouvelle réservation</h2>
+            <form id="reservationForm">
+                <input type="hidden" id="reservationId" name="reservationId" />
+                <div class="form-fields">
+                    <select id="reservationClient" name="clientId" required>
+                        <option value="">Sélectionner un client</option>
+                    </select>
+                    <select id="reservationProduit" name="produitId" required>
+                        <option value="">Sélectionner un article</option>
+                    </select>
+                    <input type="date" id="reservationDate" name="date" required />
+                    <input type="number" id="reservationDuree" name="duree" placeholder="Durée (jours)" min="1" required />
+                </div>
+                <div class="form-fields">
+                    <input type="number" id="reservationQuantite" name="quantite" placeholder="Quantité" min="1" required />
+                    <select id="reservationStatut" name="statut" required>
+                        <option value="En attente" selected>En attente</option>
+                        <option value="Confirmée">Confirmée</option>
+                        <option value="Annulée">Annulée</option>
+                    </select>
+                </div>
+                <p id="stockInfo" style="margin-top: 0; color: #374151; font-size: 14px;">Choisis un article pour voir la quantité disponible.</p>
+                <fieldset>
+                    <legend>Notes</legend>
+                    <label for="reservationNotes" class="visually-hidden">Notes de réservation</label>
+                    <textarea id="reservationNotes" name="notes" rows="4" style="width: 100%;" placeholder="Ajoute ici des précisions (optionnel)"></textarea>
+                </fieldset>
+                <div class="form-buttons" style="margin-top: 12px;">
+                    <button type="submit" id="reservationSubmitButton">Enregistrer</button>
+                    <button type="reset">Réinitialiser</button>
+                    <button type="button" id="cancelReservationEdit" style="display: none;">Annuler la modification</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Réservations à venir</h2>
+            <div class="reservation-controls">
+                <div class="reservation-filters" aria-label="Filtres des réservations">
+                    <button type="button" class="filter-btn active" data-status="TOUS">Toutes</button>
+                    <button type="button" class="filter-btn" data-status="En attente">En attente</button>
+                    <button type="button" class="filter-btn" data-status="Confirmée">Confirmées</button>
+                    <button type="button" class="filter-btn" data-status="Annulée">Annulées</button>
+                </div>
+                <div class="reservation-sort">
+                    <label for="reservationSort" class="visually-hidden">Trier les réservations</label>
+                    <select id="reservationSort" name="reservationSort">
+                        <option value="date-desc" selected>Trier: plus récentes</option>
+                        <option value="date-asc">Trier: plus anciennes</option>
+                        <option value="client-asc">Client A → Z</option>
+                        <option value="client-desc">Client Z → A</option>
+                        <option value="article-asc">Article A → Z</option>
+                        <option value="article-desc">Article Z → A</option>
+                    </select>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Client</th>
+                        <th>Produit / Service</th>
+                        <th>Date</th>
+                        <th>Durée</th>
+                        <th>Quantité</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="reservationTable">
+                    <tr>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Travail de session - BD2</p>
+        </div>
+    </footer>
+    <script src="/js/reservation.js"></script>
+</body>
+</html>

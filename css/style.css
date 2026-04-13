@@ -244,3 +244,47 @@ input[type="number"] {
   display: flex;
   gap: 10px;
 }
+
+.reservation-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reservation-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.reservation-sort select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.filter-btn {
+  min-width: auto;
+}
+
+.filter-btn.active {
+  background-color: #111827;
+  color: #f9fafb;
+  border-color: #111827;
+}
+
+.home-summary {
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .home-summary {
+    width: 100%;
+  }
+}

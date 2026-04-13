@@ -25,12 +25,15 @@ async function loadProduits() {
     }
 
     produits.forEach(p => {
+      const stockDisponible = Number.isFinite(Number(p.STOCK_DISPONIBLE))
+        ? Number(p.STOCK_DISPONIBLE)
+        : Number(p.STOCK);
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${p.ID}</td>
         <td>${p.NOM}</td>
         <td>${p.PRIX.toFixed(2)} $</td>
-        <td>${p.STOCK}</td>
+        <td>${stockDisponible} <small style="color:#6b7280;">(total: ${p.STOCK})</small></td>
         <td>
           <div class="action-buttons">
             <button type="button" onclick="editProduit({ID: ${p.ID}, NOM: '${p.NOM}', PRIX: ${p.PRIX}, STOCK: ${p.STOCK}})">Modifier</button>

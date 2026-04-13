@@ -11,57 +11,63 @@
             <div class="container header-inner">
                 <div class="logo">Travail de session - BD2</div>
                 <nav class="navbar" aria-label="Navigation principale">
-                    <a href="index.html">Accueil</a>
-                    <a href="client.html">Clients</a>
-                    <a href="produit.html">Produits</a>
-                    <a href="index.html#reservation">Réservation</a>
-                    <a href="journal.html">Journal</a>
+                    <a href="/">Accueil</a>
+                    <a href="/client">Clients</a>
+                    <a href="/produit">Produits</a>
+                    <a href="/reservation">Réservation</a>
+                    <a href="/journal">Journal</a>
                 </nav>
             </div>
         </header>
 
-        <main class="container main-content">
-            <section id="reservation" class="card" aria-labelledby="reservation-title">
-                <h2 id="reservation-title">Réserver un service / une location</h2>
-                <fieldset>
-                    <legend class="visually-hidden">Actions de réservation</legend>
-                    <div class="button-row">
-                        <button type="button">Réserver maintenant</button>
-                        <button type="button">Voir les disponibilités</button>
-                        <button type="button">Modifier une réservation</button>
-                        <button type="button">Annuler une réservation</button>
-                    </div>
-                </fieldset>
-                <div style="margin-top: 24px;">
+        <main class="container main-content full-width">
+            <section class="card home-summary" aria-labelledby="tp-summary-title">
+                <h2 id="tp-summary-title">Présentation du projet de session — SMI1002 (Hiver 2026)</h2>
+                <p>
+                    Dans le cadre de ce projet de session, on devait concevoir et implémenter une base de données relationnelle avec Oracle,
+                    basée sur un problème concret choisi. L’idée n’était pas seulement de créer des tables, mais vraiment de travailler dans
+                    un contexte plus réaliste, où la base de données est hébergée sur un serveur et accessible par plusieurs utilisateurs en
+                    même temps. Ça nous a permis d’aborder des notions importantes comme la concurrence, la gestion des transactions et la
+                    cohérence des données.
+                </p>
+
+                <p>
+                    Le projet est divisé en deux grandes parties. D’abord, on a travaillé sur la conception de la base de données : définir
+                    le problème, analyser les besoins et créer un modèle complet avec les entités, les relations, les clés primaires et
+                    étrangères, ainsi que les règles de gestion. Ensuite, on a implémenté cette structure dans Oracle.
+                </p>
+
+                <p>
+                    Dans la deuxième partie, on s’est concentrés sur les aspects plus techniques, comme l’optimisation des requêtes, la
+                    gestion des accès simultanés, les transactions, l’indexation et la récupération des données en cas de panne. On a aussi
+                    intégré des interfaces simples pour permettre d’interagir avec la base de manière claire et logique.
+                </p>
+
+                <p>
+                    Au niveau des outils, on utilise principalement Oracle et SQL Developer, et pour l’interface, on peut choisir le langage
+                    qu’on veut, tant que ça fonctionne sur les machines de l’université.
+                </p>
+
+                <p>
+                    Finalement, ce projet demande beaucoup d’autonomie et de rigueur, parce qu’on doit être capables d’intégrer plusieurs
+                    concepts importants vus dans le cours, comme :
+                </p>
+
+                <ul>
+                    <li>la modélisation des données</li>
+                    <li>l’intégrité référentielle</li>
+                    <li>les transactions (ACID)</li>
+                    <li>la gestion de la concurrence</li>
+                    <li>l’optimisation et les index</li>
+                    <li>les objets Oracle (procédures, vues, séquences)</li>
+                    <li>la journalisation des opérations</li>
+                    <li>la gestion des pannes</li>
+                </ul>
+
                 <fieldset>
                     <legend>Messages de connexion</legend>
-                        <label for="log-textbox" class="visually-hidden">Messages de connexion</label>
-                        <textarea id="log-textbox" rows="4" style="width: 100%;" readonly></textarea>
-                    </div>
-                </fieldset>
-            </section>
-
-            <section id="produits" class="card" aria-labelledby="produits-title">
-                        <div class="section-header">
-                            <h2 id="produits-title">Nos produits</h2>
-                            <div class="section-header-controls">
-                                <label for="tri-produits" class="visually-hidden">Trier les produits par</label>
-                                <select id="tri-produits" name="tri-produits" class="select-sort">
-                                    <option value="">Trié par</option>
-                                    <option value="prix-asc">Prix croissant</option>
-                                    <option value="prix-desc">Prix décroissant</option>
-                                    <option value="nom">Nom</option>
-                                    <option value="disponibilite">Disponibilité</option>
-                                </select>
-                            </div>
-                        </div>
-                <fieldset>
-                    <legend class="visually-hidden">Liste de produits</legend>
-                            <ul>
-                                <li>Produit 1</li>
-                                <li>Produit 2</li>
-                                <li>Produit 3</li>
-                            </ul>
+                    <label for="log-textbox" class="visually-hidden">Messages de connexion</label>
+                    <textarea id="log-textbox" rows="4" style="width: 100%;" readonly></textarea>
                 </fieldset>
             </section>
         </main>
